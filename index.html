@@ -117,6 +117,20 @@
             z-index: 2;
         }
 
+        .profile-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center top;
+            transform: scale(1.2);
+            margin: 0 auto 2rem;
+            display: block;
+            border: 3px solid #1a1a1a;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards 0.1s;
+        }
+
         .hero-subtitle {
             font-size: 1rem;
             color: #666;
@@ -576,6 +590,7 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
+            <img src="profile1.jpg" alt="Ama Annor" class="profile-pic">
             <p class="hero-subtitle">Computer Science Student</p>
             <h1 class="hero-title">Ama Ansongmaa Aseda Annor</h1>
             <p class="hero-description">
@@ -865,7 +880,7 @@
                 machine learning, and healthcare technology. Let's connect!
             </p>
             <div class="contact-links">
-                <a href="/cdn-cgi/l/email-protection#c9a8a4a8e7a8a7a7a6bb89a8baa1acbaa0e7acadbce7aea1" class="contact-link">
+                <a href="mailto:ama.annor@ashesi.edu.gh" class="contact-link">
                     <i class="fas fa-envelope"></i> Email
                 </a>
                 <a href="https://www.linkedin.com/in/ama-ansongmaa-aseda-annor" class="contact-link" target="_blank">
@@ -885,7 +900,7 @@
         </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
         // Approach item toggle
         function toggleApproach(element) {
             const isExpanded = element.classList.contains('expanded');
@@ -901,7 +916,7 @@
             }
         }
 
-        // Active navigation based on scroll
+        // Active navigation based on scroll - COMPLETE FIXED VERSION
         window.addEventListener('scroll', function() {
             const sections = document.querySelectorAll('section[id]');
             const navLinks = document.querySelectorAll('.nav-links a');
@@ -917,4 +932,11 @@
 
             navLinks.forEach(link => {
                 link.classList.remove('active');
-                if (link.getAttribute('hre
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
